@@ -1,0 +1,49 @@
+// ========================================
+// FORMS
+// ========================================
+
+// TODO: FINISH FORM CSS
+// - basic form
+// - drop down
+// - inputs
+//    - validation
+//    - checkbox
+//    - switches
+//    - tooltips
+//    - slipers
+ 
+
+fieldset {
+  margin: 0;
+  min-width: 0;
+  @include border-radius(3px);
+}
+
+legend {
+  display: block;
+  padding: 0 5px;
+  margin-bottom: 5px;
+  line-height: inherit;
+  border: 0;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+
+input {
+  padding: 3px;
+  @include border-radius(3px);
+  border: 1px solid $muted;
+}
+
+.form-group {
+  margin-bottom: ($body-font-size * $form-margin-bottom);
+  * {
+    width: 100%;
+  }
+}

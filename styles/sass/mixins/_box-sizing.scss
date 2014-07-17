@@ -1,0 +1,8 @@
+// ========================================
+// BOX SIZING
+// ========================================
+
+@mixin box-sizing($boxmodel) {
+  $duration: unquote($duration);
+  @include prefixer (box-sizing, $boxmodel, webkit moz spec);
+}

@@ -1,0 +1,9 @@
+// ========================================
+// SHAPES
+// ========================================
+
+@mixin hyphens($mode: auto) {
+  $duration: unquote($duration);
+  word-wrap: break-word;
+  @include prefixer (hyphens, $mode, webkit moz ms o spec);
+}

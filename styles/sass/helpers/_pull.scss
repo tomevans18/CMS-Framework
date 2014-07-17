@@ -1,0 +1,12 @@
+// ========================================
+// PULL
+// ========================================
+
+$float-list: left, right;
+.pull- {
+  @each $float in $float-list {
+    &#{$float} {
+      float: $float;
+    }
+  }
+}

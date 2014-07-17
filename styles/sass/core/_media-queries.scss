@@ -1,0 +1,191 @@
+// ========================================
+// MEDIA QUERIES
+// ========================================
+
+
+$display-options: block, inline, inline-block;
+
+// Non Media Query supported browsers
+@include responsive-invisibility('
+  .visible-#{$grid-columns-name-xs},
+  .visible-#{$grid-columns-name-xs}-block,
+  .visible-#{$grid-columns-name-xs}-inline,
+  .visible-#{$grid-columns-name-xs}-inline-block,
+  .visible-#{$grid-columns-name-sm},
+  .visible-#{$grid-columns-name-sm}-block,
+  .visible-#{$grid-columns-name-sm}-inline,
+  .visible-#{$grid-columns-name-sm}-inline-block,
+  .visible-#{$grid-columns-name-md},
+  .visible-#{$grid-columns-name-md}-block,
+  .visible-#{$grid-columns-name-md}-inline,
+  .visible-#{$grid-columns-name-md}-inline-block,
+  .visible-#{$grid-columns-name-xs}-below, 
+  .visible-#{$grid-columns-name-sm}-below, 
+  .visible-#{$grid-columns-name-md}-below
+');
+
+// XS
+@media (min-width: $screen-xs) {
+  @include responsive-invisibility('
+    .visible-#{$grid-columns-name-sm},
+    .visible-#{$grid-columns-name-sm}-block,
+    .visible-#{$grid-columns-name-sm}-inline,
+    .visible-#{$grid-columns-name-sm}-inline-block,
+    .visible-#{$grid-columns-name-md},
+    .visible-#{$grid-columns-name-md}-block,
+    .visible-#{$grid-columns-name-md}-inline,
+    .visible-#{$grid-columns-name-md}-inline-block,
+    .visible-#{$grid-columns-name-lg},
+    .visible-#{$grid-columns-name-lg}-block,
+    .visible-#{$grid-columns-name-lg}-inline,
+    .visible-#{$grid-columns-name-lg}-inline-block
+  ');
+
+  @include responsive-visibility('.visible-#{$grid-columns-name-xs}, .visible-#{$grid-columns-name-xs}-above, .visible-#{$grid-columns-name-xs}-below, .visible-#{$grid-columns-name-sm}-below, .visible-#{$grid-columns-name-md}-below, .visible-#{$grid-columns-name-lg}-below');
+
+  .visible-#{$grid-columns-name-xs}- {
+    @each $display in $display-options {
+      &#{$display} {
+        display: $display;
+      }
+    }
+  }
+  .visible-#{$grid-columns-name-xs}-above- {
+    @each $display in $display-options {
+      &#{$display} {
+        display: $display;
+      }
+    }
+  }
+}
+
+
+// SM
+@media (min-width: $screen-sm) {
+  @include responsive-invisibility('
+    .visible-#{$grid-columns-name-xs},
+    .visible-#{$grid-columns-name-xs}-block,
+    .visible-#{$grid-columns-name-xs}-inline,
+    .visible-#{$grid-columns-name-xs}-inline-block,
+    .visible-#{$grid-columns-name-md},
+    .visible-#{$grid-columns-name-md}-block,
+    .visible-#{$grid-columns-name-md}-inline,
+    .visible-#{$grid-columns-name-md}-inline-block,
+    .visible-#{$grid-columns-name-lg},
+    .visible-#{$grid-columns-name-lg}-block,
+    .visible-#{$grid-columns-name-lg}-inline,
+    .visible-#{$grid-columns-name-lg}-inline-block,
+    .visible-#{$grid-columns-name-xs}-below
+  ');
+
+  @include responsive-visibility('.visible-#{$grid-columns-name-sm}, .visible-#{$grid-columns-name-sm}-above, .visible-#{$grid-columns-name-sm}-below, .visible-#{$grid-columns-name-md}-below, .visible-#{$grid-columns-name-lg}-below');
+
+  .visible-#{$grid-columns-name-sm}- {
+    @each $display in $display-options {
+      &#{$display} {
+        display: $display;
+      }
+    }
+  }
+  .visible-#{$grid-columns-name-sm}-above- {
+    @each $display in $display-options {
+      &#{$display} {
+        display: $display;
+      }
+    }
+  }
+}
+
+// MD
+@media (min-width: $screen-md) {
+  @include responsive-invisibility('
+    .visible-#{$grid-columns-name-xs},
+    .visible-#{$grid-columns-name-xs}-block,
+    .visible-#{$grid-columns-name-xs}-inline,
+    .visible-#{$grid-columns-name-xs}-inline-block,
+    .visible-#{$grid-columns-name-sm},
+    .visible-#{$grid-columns-name-sm}-block,
+    .visible-#{$grid-columns-name-sm}-inline,
+    .visible-#{$grid-columns-name-sm}-inline-block,
+    .visible-#{$grid-columns-name-lg},
+    .visible-#{$grid-columns-name-lg}-block,
+    .visible-#{$grid-columns-name-lg}-inline,
+    .visible-#{$grid-columns-name-lg}-inline-block,
+    .visible-#{$grid-columns-name-xs}-below, 
+    .visible-#{$grid-columns-name-sm}-below 
+  ');
+
+  @include responsive-visibility('.visible-#{$grid-columns-name-md}, .visible-#{$grid-columns-name-md}-above, .visible-#{$grid-columns-name-md}-below, .visible-#{$grid-columns-name-lg}-below');
+
+  .visible-#{$grid-columns-name-md}- {
+    @each $display in $display-options {
+      &#{$display} {
+        display: $display;
+      }
+    }
+  }
+  .visible-#{$grid-columns-name-md}-above- {
+    @each $display in $display-options {
+      &#{$display} {
+        display: $display;
+      }
+    }
+  }
+}
+
+// LG
+@media (min-width: $screen-lg) {
+  @include responsive-invisibility('
+    .visible-#{$grid-columns-name-xs},
+    .visible-#{$grid-columns-name-xs}-block,
+    .visible-#{$grid-columns-name-xs}-inline,
+    .visible-#{$grid-columns-name-xs}-inline-block,
+    .visible-#{$grid-columns-name-sm},
+    .visible-#{$grid-columns-name-sm}-block,
+    .visible-#{$grid-columns-name-sm}-inline,
+    .visible-#{$grid-columns-name-sm}-inline-block,
+    .visible-#{$grid-columns-name-md},
+    .visible-#{$grid-columns-name-md}-block,
+    .visible-#{$grid-columns-name-md}-inline,
+    .visible-#{$grid-columns-name-md}-inline-block,
+    .visible-#{$grid-columns-name-xs}-below, 
+    .visible-#{$grid-columns-name-sm}-below, 
+    .visible-#{$grid-columns-name-md}-below
+  ');
+
+  @include responsive-visibility('.visible-#{$grid-columns-name-lg}, .visible-#{$grid-columns-name-lg}-above, .visible-#{$grid-columns-name-lg}-below');
+
+  .visible-#{$grid-columns-name-lg}- {
+    @each $display in $display-options {
+      &#{$display} {
+        display: $display;
+      }
+    }
+  }
+  .visible-#{$grid-columns-name-lg}-above- {
+    @each $display in $display-options {
+      &#{$display} {
+        display: $display;
+      }
+    }
+  }
+}
+
+
+// Hide
+// ---------------------------------------- 
+@media (max-width: $screen-sm) {
+  @include responsive-invisibility('.hidden-#{$grid-columns-name-xs}');
+}
+
+@media (min-width: $screen-sm) and (max-width: $screen-md) {
+  @include responsive-invisibility('.hidden-#{$grid-columns-name-sm}');
+}
+
+@media (min-width: $screen-md) and (max-width: $screen-lg) {
+  @include responsive-invisibility('.hidden-#{$grid-columns-name-md}');
+}
+
+@media (min-width: $screen-lg) {
+  @include responsive-invisibility('.hidden-#{$grid-columns-name-lg}');
+}

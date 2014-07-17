@@ -1,0 +1,278 @@
+// ========================================
+// TYPOGRAPHY
+// ========================================
+
+// Headings
+// ----------------------------------------
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  color: $headings-font-color;
+  text-decoration: $headings-font-dec;
+
+  small,
+  .small {
+    font-weight: normal;
+    line-height: 1;
+    color: $headings-small-font-color;
+  }
+}
+
+h1, .h1 {
+  font-size: $headings-font-size-h1;
+  margin: $headings-margin-h1 0px;
+}
+h2, .h2 {
+  font-size: $headings-font-size-h2;
+  margin: $headings-margin-h2 0px;
+}
+h3, .h3 {
+  font-size: $headings-font-size-h3;
+  margin: $headings-margin-h3 0px;
+}
+h4, .h4 {
+  font-size: $headings-font-size-h4;
+  margin: $headings-margin-h4 0px;
+}
+h5, .h5 {
+  font-size: $headings-font-size-h5;
+  margin: $headings-margin-h5 0px;
+}
+h6, .h6 {
+  font-size: $headings-font-size-h6;
+  margin: $headings-margin-h6 0px;
+}
+
+
+// Body
+// ---------------------------------------- 
+body {
+  font-family: $body-font-family;
+  color: $body-font-color;
+  font-size: $body-font-size;
+  line-height: ($body-font-size * $body-line-height);
+}
+small,
+.small {
+  font-size: 0.85em;
+}
+
+// align text
+$align-list: center, left, right, justify;
+.align- {
+  @each $align in $align-list {
+    &#{$align} {
+      text-align: $align;
+    }
+  }
+}  
+// no wrap
+.text-nowrap {
+  white-space:nowrap;
+}
+// text transform
+$text-transform: lowercase, uppercase, capitalize;
+.text- {
+  @each $text in $text-transform {
+    &#{$text} {
+      text-transform: $text;
+    }
+  }
+}              
+// bold
+strong {
+  font-weight: bold;
+}
+// italics
+em {
+  font-style: italic;
+}
+// mark
+mark,
+.mark {
+  padding: .2em;
+  color: #000;
+  background-color: #fcf8e3;
+}
+// delete
+del {
+  text-decoration: line-through;
+}
+// abbreviation
+abbr[title], abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 1px dotted $muted;
+}
+.initialism {
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+// address
+address,
+.address {
+  font-style: normal;
+  margin-bottom: ($body-font-size * $paragraph-margin-bottom);
+}
+
+// Links
+// ----------------------------------------
+a {
+  color: $link-color;
+  font-weight: $link-weight;
+  text-decoration: $link-dec;
+  &:hover, &:focus {
+    color: $link-hover-color;
+    font-weight: $link-hover-weight;
+    text-decoration: $link-hover-dec;
+  }
+  &:active, .active {
+    color: $link-active-color;
+    font-weight: $link-active-weight;
+    text-decoration: $link-active-dec;
+  }
+}
+.disableLink {
+  pointer-events: none;
+  cursor: default;
+}
+
+
+// Paragraph
+// ----------------------------------------
+p {
+  &.lead {
+    font-size: 1.35em;
+  }
+  margin-top: 0px;
+  margin-bottom: ($body-font-size * $paragraph-margin-bottom);
+}
+
+
+// Blockquote
+// ----------------------------------------
+// variables
+blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 1.25em;
+  border-left: 5px solid $muted;
+  &:before,
+  &:after {
+    content:""
+  }
+  p {
+    margin-bottom: 0px;
+  }
+  footer, .footer, small, .small {
+    margin-top: ($body-font-size * $paragraph-margin-bottom);
+    display: block;
+    color: lighten($body-font-color, 40%);
+    font-size: 0.85em;
+    &:before {
+      content:'\2014 \00A0'
+    }
+  }
+  &.blockquote-reverse, &.pull-right {
+    padding-right: 15px;
+    padding-left: 0;
+    text-align: right;
+    border-right: 5px solid $muted;
+    border-left: 0;
+    float: none;
+  }
+}
+
+// Callout
+// ----------------------------------------
+.callout {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid $muted;
+  border-left-width: 5px;
+  @include border-radius(3px);
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0px;
+  }
+  p:last-child {
+    margin-bottom: 0px;
+  }
+  .callout-reverse, &.pull-right {
+    text-align: right;
+    border-left-width: 1px;
+    border-right-width: 5px;
+    float: none;
+  }
+  @each $name, $color in $colors {
+    &.#{$name} {
+      color: $color;  
+      h1, h2, h3, h4, h5, h6 {
+        color: $color;
+      }
+    }
+  }
+}
+
+
+// List
+// ----------------------------------------
+ul.unstyled li {
+  list-style: none;
+}
+ul.inline li {
+  list-style: none;
+  display: inline-block;
+}
+@media (min-width: $grid-breakpoint) {
+  .dl-horizontal {
+    dt {
+      float: left;
+      width: 30%;
+      clear: left;
+      text-align: right;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    dd {
+      margin-left: 30%;
+      @include clearfix;
+    }
+  }
+}
+
+// Code
+// ----------------------------------------
+code, kbd, pre, samp, tt {
+  font-family:Menlo,Monaco,Consolas,"Courier New",monospace;
+}
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  @include border-radius(4px);
+}
+kbd {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #fff;
+  background-color: #333;
+  @include border-radius(3px);
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  @include border-radius(4px);
+}

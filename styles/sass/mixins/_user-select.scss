@@ -1,0 +1,8 @@
+// ========================================
+// USER SELECT
+// ========================================
+
+@mixin user-select($select) {
+  $select: unquote($select);
+  @include prefixer (user-select, $select, webkit moz ms spec);
+}

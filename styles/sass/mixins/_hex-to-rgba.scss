@@ -1,0 +1,8 @@
+// ========================================
+// HEX TO RGBA
+// ========================================
+
+@mixin hex-to-rgba($property, $color, $opacity) {
+    $property: $color; /* The Fallback */
+    $property: rgba($color, $opacity);
+}

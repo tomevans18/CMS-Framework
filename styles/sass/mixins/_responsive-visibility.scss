@@ -1,0 +1,21 @@
+// ========================================
+// RESPONSIVE VISIBILITY
+// ========================================
+
+// visible
+@mixin responsive-visibility($parent) {
+  #{$parent} {
+    display: block !important;
+  }
+  table#{$parent}  { display: table; }
+  tr#{$parent}     { display: table-row !important; }
+  th#{$parent},
+  td#{$parent}     { display: table-cell !important; }
+}
+
+// hide
+@mixin responsive-invisibility($parent) {
+  #{$parent} {
+    display: none !important;
+  }
+}

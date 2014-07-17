@@ -1,0 +1,183 @@
+// ==================================================
+// DEFAULTS
+// ==================================================
+
+$body-font-color:                         #000 !default;                                   // main font color
+// ========================================
+// COLOUR SCHEME
+// ========================================
+
+$muted:                                   lighten($body-font-color, 75) !default;          // Default colours for all projects
+$primary:                                 #1abc9c !default;
+$success:                                 #2ecc70 !default;
+$info:                                    #3398db !default;
+$warning:                                 #f1c410 !default;
+$danger:                                  #e74d3d !default;
+$inverse:                                 #34495e !default;
+
+$color-palette:                           complementary !default;                          // Color palette type - analogous, monochromatic, triad, compound, complementary, shades or custom
+
+$main-color:                              #1263cc !default;                                // main colour
+$color-variant:                           20 !default;                                     // difference between the colors - 0-100
+
+// Color brightness
+$brightness-color1:                       50% !default;                                    // brightness of colour 1
+$brightness-color2:                       50% !default;                                    // brightness of colour 2
+$brightness-color3:                       50% !default;                                    // brightness of colour 3
+$brightness-color4:                       50% !default;                                    // brightness of colour 4
+$brightness-color5:                       50% !default;                                    // brightness of colour 5
+
+// Color saturation
+$saturation-color1:                       50% !default;                                    // saturation of colour 1
+$saturation-color2:                       50% !default;                                    // saturation of colour 2
+$saturation-color3:                       50% !default;                                    // saturation of colour 3
+$saturation-color4:                       50% !default;                                    // saturation of colour 4
+$saturation-color5:                       50% !default;                                    // saturation of colour 5
+
+// Custom
+$custom-color1:                           blue !default;                                   // custom colour 1
+$custom-color2:                           green !default;                                  // custom colour 2
+$custom-color3:                           red !default;                                    // custom colour 3
+$custom-color4:                           yellow !default;                                 // custom colour 4
+$custom-color5:                           orange !default;                                 // custom colour 5
+
+// Calling the colors
+@import                                   "core/color-scheme";                             // functions need to be pulled in to avoid errors of not found
+$color1:                                  color1();                                        // calling colours for future use in SCSS
+$color2:                                  color2();
+$color3:                                  color3();
+$color4:                                  color4();
+$color5:                                  color5();
+
+// Calling for functions
+$colors:                                  (color1, $color1),
+                                          (color2, $color2),
+                                          (color3, $color3),
+                                          (color4, $color4),
+                                          (color5, $color5),
+                                          (muted, $muted),
+                                          (primary, $primary),
+                                          (success, $success),
+                                          (info, $info),
+                                          (warning, $warning),
+                                          (danger, $danger),
+                                          (inverse, $inverse);
+
+
+// ========================================
+// TYPOGRAPHY
+// ========================================
+
+// Body
+@import                                   "helpers/fonts";                                 // fonts need to be pulled in to avoid errors of not found
+$body-font-family:                        $helvetica !default;                             // main font color
+$body-font-size:                          14px !default;                                   // main font size - this must be in px  
+$body-line-height:                        1.3 !default;                                    // main font line height - it take into account the text size
+
+// Paragraph
+$paragraph-margin-bottom:                 1 !default;                                      // margin at bottom of paragraph - it take into account the text size
+
+// Headings
+$headings-font-family:                    inherit !default;                                // header font family
+$headings-font-color:                     $body-font-color !default;                       // header color
+$headings-font-weight:                    600 !default;                                    // header font weight
+$headings-font-dec:                       none !default;                                   // header decoration - italics, bold, underline...
+$headings-line-height:                    1.1 !default;                                    // header line height
+$headings-small-font-color:               lighten($headings-font-color, 20%) !default;     // small header  color
+
+$headings-font-size-h1:                   2.6em !default;                                  // h1 font-size - make it 36px from base font of 
+$headings-font-size-h2:                   $headings-font-size-h1 - 0.45 !default;          // h2 font-size
+$headings-font-size-h3:                   $headings-font-size-h2 - 0.45 !default;          // h3 font-size
+$headings-font-size-h4:                   $headings-font-size-h3 - 0.45 !default;          // h4 font-size
+$headings-font-size-h5:                   $headings-font-size-h4 - 0.25 !default;          // h5 font-size
+$headings-font-size-h6:                   $headings-font-size-h5 - 0.15 !default;          // h6 font-size
+
+$headings-margin-h1:                      25px !default;                                   // h1 margin top and bottom
+$headings-margin-h2:                      $headings-margin-h1 * 0.8 !default;              // h2 margin top and bottom
+$headings-margin-h3:                      $headings-margin-h2 * 0.8 !default;              // h3 margin top and bottom
+$headings-margin-h4:                      $headings-margin-h3 * 0.8 !default;              // h4 margin top and bottom
+$headings-margin-h5:                      $headings-margin-h4 * 0.8 !default;              // h5 margin top and bottom
+$headings-margin-h6:                      $headings-margin-h5 * 0.8 !default;              // h6 margin top and bottom
+
+// Links
+$link-color:                              $color4 !default;                                // link color
+$link-weight:                             inherit !default;                                // link weight
+$link-dec:                                none !default;                                   // link decoration - italics, bold, underline...
+//--
+$link-hover-color:                        $color5 !default;                                // link hover color
+$link-hover-weight:                       $link-weight !default;                           // link hover weight
+$link-hover-dec:                          $link-dec !default;                              // link hover decoration - italics, bold, underline...
+//--
+$link-active-color:                       $link-hover-color !default;                      // link active color
+$link-active-weight:                      $link-hover-weight !default;                     // link active weight
+$link-active-dec:                         $link-hover-dec !default;                        // link active decoration - italics, bold, underline...
+
+
+// ========================================
+// SCREEN SIZES
+// ========================================
+
+$screen-xs:                               0px !default;                                    // min size of small screen
+$screen-sm:                               480px !default;                                  // min size of small screen
+$screen-md:                               768px !default;                                  // min size of medium screen
+$screen-lg:                               992px !default;                                  // min size of large screen
+
+
+// ========================================
+// GRID
+// ========================================
+
+$grid-max-width:                          1200px !default;                                 // max width of page
+$grid-breakpoint:                         $screen-sm !default;                             // where the website layout alters main elements like the navigation
+
+$grid-columns:                            12 !default;                                     // number of columns
+
+$grid-columns-name-prefix:                col !default;                                    // class of global column
+$grid-columns-name-xs:                    xs !default;                                     // class of extra small screen column
+$grid-columns-name-sm:                    sm !default;                                     // class of small screen column
+$grid-columns-name-md:                    md !default;                                     // class of medium screen column 
+$grid-columns-name-lg:                    lg !default;                                     // class of large screen column  
+
+$grid-gutter-global:                      30px !default;                                   // space either side of the grid
+$grid-gutter-xs:                          ($grid-gutter-global*0.25) !default;             // space either side of the grid
+$grid-gutter-sm:                          ($grid-gutter-global*0.5) !default;              // space either side of the grid
+$grid-gutter-md:                          ($grid-gutter-global*0.75) !default;             // space either side of the grid
+$grid-gutter-lg:                          $grid-gutter-global !default;                    // space either side of the grid
+
+$grid-columns-padding-global:             15px !default;                                   // margin between columns
+$grid-columns-padding-global-adapt:       true !default;
+$grid-columns-padding-xs:                 ($grid-columns-padding-global*0.25) !default;    // margin between columns
+$grid-columns-padding-sm:                 ($grid-columns-padding-global*0.5) !default;     // margin between columns
+$grid-columns-padding-md:                 ($grid-columns-padding-global*0.75) !default;    // margin between columns
+$grid-columns-padding-lg:                 $grid-columns-padding-global !default;           // margin between columns
+
+$grid-offset-name-prefix:                 offset !default;                                 // class of global offset
+$grid-offset-name-xs:                     $grid-columns-name-xs !default;                  // class of extra small screen offset
+$grid-offset-name-sm:                     $grid-columns-name-sm !default;                  // class of small screen offset
+$grid-offset-name-md:                     $grid-columns-name-md !default;                  // class of medium screen offset 
+$grid-offset-name-lg:                     $grid-columns-name-lg !default;                  // class of large screen offset
+
+// Calling for functions
+$screen-sizes:                            ($grid-columns-name-xs, $screen-xs),
+                                          ($grid-columns-name-sm, $screen-sm),
+                                          ($grid-columns-name-md, $screen-md),
+                                          ($grid-columns-name-lg, $screen-lg);
+
+
+// ========================================
+// BUTTONS
+// ========================================
+$btn-change:                              6% !default;                                     // Default difference between bg color on button status
+
+
+// ========================================
+// BUTTONS
+// ========================================
+$form-margin-bottom:                      1 !default;                                      // margin at bottom of form groups - it take into account the text size
+
+
+// ========================================
+// PRINT STYLING
+// ========================================
+$print-link-url:                          false !default;                                  // show link URL next to link when printing
+$print-abbr-title:                        false !default;                                  // show link title next to link when printing

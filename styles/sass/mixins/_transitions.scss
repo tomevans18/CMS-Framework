@@ -1,0 +1,31 @@
+// ========================================
+// TRANSITIONS
+// ========================================
+
+@mixin transition($transition) {
+  $transition: unquote($transition);
+  @include prefixer (transition, $transition, webkit o spec);
+}
+@mixin transition-property($transition-property) {
+  $transition-property: unquote($transition-property);
+  @include prefixer (transition-property, $transition-property, webkit spec);
+}
+@mixin transition-delay($transition-delay) {
+  $transition-delay: unquote($transition-delay);
+  @include prefixer (transition-delay, $transition-delay, webkit spec);
+}
+@mixin transition-duration($transition-duration) {
+  $transition-duration: unquote($transition-duration);
+  @include prefixer (transition-duration, $transition-duration, webkit spec);
+}
+@mixin transition-timing-function($timing-function) {
+  $timing-function: unquote($timing-function);
+  @include prefixer (transition-timing-function, $timing-function, webkit spec);
+}
+@mixin transition-transform($transition) {
+  $transition: unquote($transition);
+  -webkit-transition: -webkit-transform $transition;
+     -moz-transition: -moz-transform $transition;
+       -o-transition: -o-transform $transition;
+          transition: transform $transition;
+}

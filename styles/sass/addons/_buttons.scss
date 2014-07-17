@@ -1,0 +1,64 @@
+// ========================================
+// BUTTONS
+// ========================================
+
+.btn, button {
+  background: none;
+  padding: 6px 12px;
+  border: none;
+  -webkit-font-smoothing: subpixel-antialiased;
+  @include user-select(none);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  @include transition('border .25s linear, color .25s linear, background-color .25s linear');
+  @include border-radius(4px);
+  color: #ffffff;
+  background-color: $muted;
+  &:hover {
+    background-color: lighten($muted, $btn-change);
+  }
+  &:active, .active {
+    background-color: darken($muted, $btn-change);
+  }
+  &.btn-large {
+    padding: 10px 19px;
+    font-size: 1.214em;
+    @include border-radius(6px);
+  }
+  &.btn-small {
+    padding: 5px 10px;
+    font-size: 0.857em;
+    @include border-radius(3px);
+  }
+  &.btn-ex-small {
+    padding: 1px 5px;
+    font-size: 0.857em;
+    @include border-radius(3px);
+  }
+  &.disabled {
+    pointer-events: none !important;
+    cursor: not-allowed !important;
+    @include hex-to-rgba(color, $muted, 0.70);
+    @include opacity(0.6);
+    background-color: lighten($muted, 8%);
+  }
+  &.btn-block {
+    display: block;
+    width: 100%;
+  }
+  @each $name, $color in $colors {
+    &.#{$name} {
+      background-color: $color;  
+      &:hover {
+        background-color: lighten($color, $btn-change);
+      }
+      &:active {
+        background-color: darken($color, $btn-change);
+      }
+    }
+  }
+}
+
+// TODO: Buttons with icons

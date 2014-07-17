@@ -1,0 +1,13 @@
+// ========================================
+// RESPONSIVE IMAGE BACKGROUND
+// ========================================
+
+@mixin responsive-image-background($imageurl, $extenstion) {
+  background: url('#{$imageurl}.#{$extenstion}') no-repeat center center fixed; // fall back to browsers which don't support media queries
+  @include prefixer (background-size, cover, webkit moz o spec);
+  @each $name, $size in $screen-sizes {
+    @media (min-width: $size) {
+      background-image: url('#{$imageurl}-#{$name}.#{$extenstion}'); 
+    }
+  }
+}

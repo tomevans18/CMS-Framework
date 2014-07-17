@@ -1,0 +1,15 @@
+// ========================================
+// CONTEXTUAL COLORS
+// ========================================
+
+@each $name, $color in $colors {
+  .text-#{$name} {
+    color: $color;  
+  }
+}
+
+@each $name, $color in $colors {
+  .bg-#{$name} {
+    background-color: $color;  
+  }
+}

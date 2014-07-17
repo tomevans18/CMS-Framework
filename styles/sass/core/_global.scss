@@ -1,0 +1,14 @@
+// ========================================
+// GLOBAL
+// ========================================
+
+body, html {
+  margin: 0px;
+  padding: 0px;
+  -webkit-font-smoothing: antialiased;
+}
+
+*, *:after, *:before { // Stop issue with element width being incorrect
+  @include prefixer (box-sizing, border-box, webkit moz spec);
+  @include backface-visibility(hidden);
+}

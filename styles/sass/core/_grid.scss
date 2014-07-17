@@ -1,0 +1,162 @@
+// ========================================
+// GRID
+// ========================================
+
+// Grid maths
+$grid-columns-width: (100 / $grid-columns) * 1%;
+
+// Global
+// ---------------------------------------- 
+[class*='#{$grid-columns-name-prefix}-'] {
+  float: left;
+  position: relative;
+}
+
+.centered {
+  float: none;
+  display: block;
+  margin: 0 auto;
+}
+
+.row {
+  @include clearfix;
+  [class*='#{$grid-columns-name-prefix}-']:last-child { // Fix sub-pixel rendering issue
+    float:    none;
+    overflow: hidden;
+    width:    auto;
+  }
+} 
+
+.row-last-fixed {
+  @include clearfix;
+} 
+
+// col- grid
+@for $i from 1 through $grid-columns {
+  // grid
+  .#{$grid-columns-name-prefix}-#{$i} {
+    width: $grid-columns-width * $i;
+  }
+  // offset
+  .#{$grid-offset-name-prefix}-#{$i} {
+    margin-left: $grid-columns-width * $i;
+  }
+  // pull
+  .#{$grid-columns-name-prefix}-pull-#{$i} {
+    right: $grid-columns-width * $i;
+  }
+  // push
+  .#{$grid-columns-name-prefix}-push-#{$i} {
+    left: $grid-columns-width * $i;
+  }
+}
+[class*='#{$grid-columns-name-prefix}-'] {
+  padding: 0 ($grid-columns-padding-global / 2);
+}
+
+
+// Non media query supportive
+// ---------------------------------------- 
+.container {
+  width: 1024px;
+  margin: 0 auto;
+  padding: 0 $grid-gutter-global;
+  @include clearfix;
+}
+
+@for $i from 1 through $grid-columns {
+  // grid
+  .#{$grid-columns-name-prefix}-#{$i} {
+    width: $grid-columns-width * $i;
+  }
+  // offset
+  .#{$grid-offset-name-prefix}-#{$i} {
+    margin-left: $grid-columns-width * $i;
+  }
+  // pull
+  .#{$grid-columns-name-prefix}-pull-#{$i} {
+    right: $grid-columns-width * $i;
+  }
+  // push
+  .#{$grid-columns-name-prefix}-push-#{$i} {
+    left: $grid-columns-width * $i;
+  }
+}
+
+[class*='#{$grid-columns-name-prefix}-'] {
+  padding: 0 ($grid-columns-padding-global / 2);
+}
+
+@for $i from 1 through $grid-columns {
+  // grid
+  [class^="#{$grid-columns-name-prefix}"][class$="#{$i}"] {
+    width: $grid-columns-width * $i;
+  }
+  // offset
+  [class^="#{$grid-offset-name-prefix}"][class$="#{$i}"] {
+    margin-left: $grid-columns-width * $i;
+  }
+  // pull
+  [class^="#{$grid-columns-name-prefix}"][class$="-pull-#{$i}"] {
+    right: $grid-columns-width * $i;
+  }
+  // push
+  [class^="#{$grid-columns-name-prefix}"][class$="-push-#{$i}"] {
+    left: $grid-columns-width * $i;
+  }
+}
+
+
+// Media query grid
+// ---------------------------------------- 
+
+
+$grid:  ($grid-columns-name-xs, $screen-xs, $grid-gutter-xs, $grid-columns-padding-xs, $grid-offset-name-xs),
+        ($grid-columns-name-sm, $screen-sm, $grid-gutter-sm, $grid-columns-padding-sm, $grid-offset-name-sm),
+        ($grid-columns-name-md, $screen-md, $grid-gutter-md, $grid-columns-padding-md, $grid-offset-name-md),
+        ($grid-columns-name-lg, $screen-lg, $grid-gutter-lg, $grid-columns-padding-lg, $grid-offset-name-lg);
+
+@media (min-width: $screen-xs) {
+  .container {
+    max-width: $grid-max-width;
+    width: auto;
+    min-width: $screen-xs;
+    margin: 0 auto;
+    @include clearfix;
+  }
+}
+@each $name, $size, $gutter, $padding, $offset-name in $grid {
+  @media (min-width: $size) {
+    .container {
+      padding: 0 $gutter;
+    }
+
+    @for $i from 1 through $grid-columns {
+      // grid
+      .#{$grid-columns-name-prefix}-#{$name}-#{$i} {
+        width: $grid-columns-width * $i;
+      }
+      // offset
+      .#{$grid-offset-name-prefix}-#{$offset-name}-#{$i} {
+        margin-left: $grid-columns-width * $i;
+      }
+      // pull
+      .#{$grid-columns-name-prefix}-#{$name}-pull-#{$i} {
+        right: $grid-columns-width * $i;
+      }
+      // push
+      .#{$grid-columns-name-prefix}-#{$name}-push-#{$i} {
+        left: $grid-columns-width * $i;
+      }
+    }
+
+    [class*='#{$grid-columns-name-prefix}-#{$name}'] {
+      padding: 0 ($padding / 2);
+    }
+    @if $grid-columns-padding-global-adapt == true {
+      [class*='#{$grid-columns-name-prefix}-'] {
+        padding: 0 ($padding / 2);
+      }
+    }
+  }
+}

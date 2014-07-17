@@ -1,0 +1,244 @@
+// ========================================
+// COLOUR SCHEME
+// ========================================
+
+$color-variant-calc:  $color-variant / 4; // keep it within the 20% difference otherwise colors become pure white or black
+
+@function color1-pallet($color: $main-color, $color-scheme: $color-palette, $color-percentage-different: $color-variant-calc, $color-custom: $custom-color1){
+  @if $color-scheme == analogous {
+    @return adjust-hue($color, $color-percentage-different * 3.6 * 2deg);
+  }
+  @else if $color-scheme == monochromatic {
+    @return lighten($color, $color-percentage-different * 2%);
+  }
+  @else if $color-scheme == triad {
+    @return adjust-hue($color, -120deg);
+  }
+  @else if $color-scheme == compound {
+    @return desaturate($color, 50%);
+  }
+  @else if $color-scheme == complementary {
+    @return darken($color, 20%);
+  }
+  @else if $color-scheme == shades {
+    @return saturate(lighten($color, $color-percentage-different * 2.5%), $color-percentage-different * 2.5%);
+  }
+  @else if $color-scheme == custom {
+    @return $color-custom;
+  }
+  @else {
+    @return $color;
+  }
+}
+
+@function color2-pallet($color: $main-color, $color-scheme: $color-palette, $color-percentage-different: $color-variant-calc, $color-custom: $custom-color2){
+  @if $color-scheme == analogous {
+    @return adjust-hue($color, $color-percentage-different * 3.6 * 1deg);
+  }
+  @else if $color-scheme == monochromatic {
+    @return lighten($color, $color-percentage-different * 1%);
+  }
+  @else if $color-scheme == triad {
+    @return lighten(adjust-hue($color, -120deg), 15%);
+  }
+  @else if $color-scheme == compound {
+    @return adjust-hue($color, -37deg);
+  }
+  @else if $color-scheme == complementary {
+    @return $color;
+  }
+  @else if $color-scheme == shades {
+    @return saturate(lighten($color, $color-percentage-different * 1%), $color-percentage-different * 1%);
+  }
+  @else if $color-scheme == custom {
+    @return $color-custom;
+  }
+  @else {
+    @return $color;
+  }
+}
+
+@function color3-pallet($color: $main-color, $color-scheme: $color-palette, $color-percentage-different: $color-variant-calc, $color-custom: $custom-color3){
+  @if $color-scheme == complementary {
+    @return lighten($color, 20%);
+  }
+  @else if $color-scheme == custom {
+    @return $color-custom;
+  }
+  @else {
+    @return $color;
+  }
+}
+
+@function color4-pallet($color: $main-color, $color-scheme: $color-palette, $color-percentage-different: $color-variant-calc, $color-custom: $custom-color4){
+  @if $color-scheme == analogous {
+    @return adjust-hue($color, $color-percentage-different * -3.6 * 1deg);
+  }
+  @else if $color-scheme == monochromatic {
+    @return darken($color, $color-percentage-different * 1%);
+  }
+  @else if $color-scheme == triad {
+    @return lighten(adjust-hue($color, 120deg), 15%);
+  }
+  @else if $color-scheme == compound {
+    @return adjust-hue($color, -208deg);
+  }
+  @else if $color-scheme == complementary {
+    @return darken(adjust-hue($color, 180deg), 10%);
+  }
+  @else if $color-scheme == shades {
+    @return desaturate(darken($color, $color-percentage-different * 1%), $color-percentage-different * 1%);
+  }
+  @else if $color-scheme == custom {
+    @return $color-custom;
+  }
+  @else {
+    @return $color;
+  }
+}
+
+@function color5-pallet($color: $main-color, $color-scheme: $color-palette, $color-percentage-different: $color-variant-calc, $color-custom: $custom-color5){
+  @if $color-scheme == analogous {
+    @return adjust-hue($color, $color-percentage-different * -3.6 * 2deg);
+  }
+  @else if $color-scheme == monochromatic {
+    @return darken($color, $color-percentage-different * 2%);
+  }
+  @else if $color-scheme == triad {
+    @return adjust-hue($color, 120deg);
+  }
+  @else if $color-scheme == compound {
+    @return adjust-hue($color, -200deg);
+  }
+  @else if $color-scheme == complementary {
+    @return lighten(adjust-hue($color, 180deg), 10%);
+  }
+  @else if $color-scheme == shades {
+    @return desaturate(darken($color, $color-percentage-different * 2%), $color-percentage-different * 2%);
+  }
+  @else if $color-scheme == custom {
+    @return $color-custom;
+  }
+  @else {
+    @return $color;
+  }
+}
+
+
+@function color1-saturation($saturation: $saturation-color1, $color: color1-pallet()){
+  @if $saturation > 50% {
+    @return saturate($color, $saturation - 50%);
+  }
+  @else if $saturation == 50% {
+    @return $color;
+  }
+  @else if $saturation < 50% {
+    @return desaturate($color, 50% - $saturation);
+  }
+}
+@function color2-saturation($saturation: $saturation-color2, $color: color2-pallet()){
+  @if $saturation > 50% {
+    @return saturate($color, $saturation - 50%);
+  }
+  @else if $saturation == 50% {
+    @return $color;
+  }
+  @else if $saturation < 50% {
+    @return desaturate($color, 50% - $saturation);
+  }
+}
+@function color3-saturation($saturation: $saturation-color3, $color: color3-pallet()){
+  @if $saturation > 50% {
+    @return saturate($color, $saturation - 50%);
+  }
+  @else if $saturation == 50% {
+    @return $color;
+  }
+  @else if $saturation < 50% {
+    @return desaturate($color, 50% - $saturation);
+  }
+}
+@function color4-saturation($saturation: $saturation-color4, $color: color4-pallet()){
+  @if $saturation > 50% {
+    @return saturate($color, $saturation - 50%);
+  }
+  @else if $saturation == 50% {
+    @return $color;
+  }
+  @else if $saturation < 50% {
+    @return desaturate($color, 50% - $saturation);
+  }
+}
+@function color5-saturation($saturation: $saturation-color5, $color: color5-pallet()){
+  @if $saturation > 50% {
+    @return saturate($color, $saturation - 50%);
+  }
+  @else if $saturation == 50% {
+    @return $color;
+  }
+  @else if $saturation < 50% {
+    @return desaturate($color, 50% - $saturation);
+  }
+}
+
+
+@function color1($brightness: $brightness-color1, $color: color1-saturation()){
+  @if $brightness > 50% {
+    @return lighten($color, $brightness - 50%);
+  }
+  @else if $brightness == 50% {
+    @return $color;
+  }
+  @else if $brightness < 50% {
+    @return darken($color, 50% - $brightness);
+  }
+}
+@function color2($brightness: $brightness-color2, $color: color2-saturation()){
+  @if $brightness > 50% {
+    @return lighten($color, $brightness - 50%);
+  }
+  @else if $brightness == 50% {
+    @return $color;
+  }
+  @else if $brightness < 50% {
+    @return darken($color, 50% - $brightness);
+  }
+}
+@function color3($brightness: $brightness-color3, $color: color3-saturation()){
+  @if $brightness > 50% {
+    @return lighten($color, $brightness - 50%);
+  }
+  @else if $brightness == 50% {
+    @return $color;
+  }
+  @else if $brightness < 50% {
+    @return darken($color, 50% - $brightness);
+  }
+}
+@function color4($brightness: $brightness-color4, $color: color4-saturation()){
+  @if $brightness > 50% {
+    @return lighten($color, $brightness - 50%);
+  }
+  @else if $brightness == 50% {
+    @return $color;
+  }
+  @else if $brightness < 50% {
+    @return darken($color, 50% - $brightness);
+  }
+}
+@function color5($brightness: $brightness-color5, $color: color5-saturation()){
+  @if $brightness > 50% {
+    @return lighten($color, $brightness - 50%);
+  }
+  @else if $brightness == 50% {
+    @return $color;
+  }
+  @else if $brightness < 50% {
+    @return darken($color, 50% - $brightness);
+  }
+}
+
+
+
+
+

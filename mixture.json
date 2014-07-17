@@ -1,0 +1,47 @@
+{
+  "autoPrefixer": true,
+  "convertHtml": {
+    "default": null,
+    "extension": ".html",
+    "ignoreUrls": null,
+    "path": null,
+    "relativePaths": true
+  },
+  "customRuby": false,
+  "customRubyPath": null,
+  "customTodos": null,
+  "debug": false,
+  "domain": null,
+  "followLeader": true,
+  "ignoreDir": [
+    "ignore"
+  ],
+  "less": null,
+  "lintScripts": true,
+  "modelSource": null,
+  "optimiseImages": true,
+  "optimiseSVG": true,
+  "password": "CMSforthewin#1",
+  "preprocessorLocations": [
+    "scripts",
+    "styles/sass",
+    "styles"
+  ],
+  "preprocessorScriptOutput": "scripts",
+  "preprocessorStyleOutput": "styles",
+  "projectDescription": "A simple framework for mixture",
+  "projectName": "CMS Framework",
+  "publishedId": "15621",
+  "reload": 0,
+  "remoteDebugPort": 0,
+  "routes": null,
+  "sass": null,
+  "serverHostname": null,
+  "serverPort": null,
+  "sitemap": true,
+  "templateDefaultLayout": "layout",
+  "templateDefaultPage": "index",
+  "templateDirectory": "layouts",
+  "type": "mixture",
+  "useCompass": false
+}

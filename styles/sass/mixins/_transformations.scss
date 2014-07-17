@@ -1,0 +1,57 @@
+// ========================================
+// TRANSFORMATIONS
+// ========================================
+
+@mixin scale($ratio) {
+  $ratio: unquote($ratio);
+  @include prefixer (transform, scale($ratio), webkit ms o spec);
+}
+
+@mixin scaleX($ratio) {
+  $ratio: unquote($ratio);
+  @include prefixer (transform, scaleX($ratio), webkit ms o spec);
+}
+@mixin scaleY($ratio) {
+  $ratio: unquote($ratio);
+  @include prefixer (transform, scaleY($ratio), webkit ms o spec);
+}
+@mixin skew($x, $y) {
+  $x: unquote($x);
+  $y: unquote($y);
+  @include prefixer (transform, skewX($x) skewY($y), webkit ms o spec);
+}
+@mixin translate($x, $y) {
+  $x: unquote($x);
+  $y: unquote($y);
+  @include prefixer (transform, translate($x, $y), webkit ms o spec);
+}
+@mixin translate3d($x, $y, $z) {
+  $x: unquote($x);
+  $y: unquote($y);
+  $z: unquote($z);
+  @include prefixer (transform, translate3d($x, $y, $z), webkit spec);
+}
+@mixin rotate($degrees) {
+  $degrees: unquote($degrees);
+  @include prefixer (transform, rotate($degrees), webkit ms o spec);
+}
+@mixin rotateX($degrees) {
+  $degrees: unquote($degrees);
+  @include prefixer (transform, rotateX($degrees), webkit ms o spec);
+}
+@mixin rotateY($degrees) {
+  $degrees: unquote($degrees);
+  @include prefixer (transform, rotateY($degrees), webkit ms o spec);
+}
+@mixin perspective($perspective) {
+  $perspective: unquote($perspective);
+  @include prefixer (perspective, $perspective, webkit moz spec);
+}
+@mixin perspective-origin($perspective) {
+  $perspective: unquote($perspective);
+  @include prefixer (origin, $perspective, webkit moz spec);
+}
+@mixin transform-origin($origin) {
+  $origin: unquote($origin);
+  @include prefixer (origin, $origin, webkit moz ns spec);
+}

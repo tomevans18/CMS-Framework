@@ -1,0 +1,20 @@
+// ========================================
+// MEDIA
+// ========================================
+
+// Images
+// ----------------------------------------
+img {
+  display: block;
+  width: 100% \9; // Force IE10 and below to size SVG images correctly
+  max-width: 100%; // Part 1: Set a maximum relative to the parent
+  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+}
+
+// Video
+// ----------------------------------------
+// TODO: Find a better way to do responsive video
+video {
+  width: 100%    !important;
+  height: auto   !important;
+}

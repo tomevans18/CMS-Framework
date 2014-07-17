@@ -1,0 +1,12 @@
+// ========================================
+// NO PADDING
+// ========================================
+
+$padding-list: top, left, bottom, right;
+.no-padding- {
+  @each $padding in $padding-list {
+    &#{$padding} {
+      padding-#{$padding}: 0px;
+    }
+  }
+}

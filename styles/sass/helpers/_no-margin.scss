@@ -1,0 +1,12 @@
+// ========================================
+// NO MARGIN
+// ========================================
+
+$margin-list: top, left, bottom, right;
+.no-margin- {
+  @each $margin in $margin-list {
+    &#{$margin} {
+      margin-#{$margin}: 0px;
+    }
+  }
+}

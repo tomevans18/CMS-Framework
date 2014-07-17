@@ -1,0 +1,52 @@
+// --------------------------------------------------
+// SASS FRAMEWORK IMPORT - REQUIRED
+// ==================================================
+@import "framework";
+
+// --------------------------------------------------
+// SCREEN SIZE HELPER
+// ==================================================
+body {
+  &:before{
+    content: "ex-small size";
+    color: #FFF;
+    background-color: green;
+    padding: 5px 40px;
+    position: fixed;
+    opacity: 0.8;
+    z-index: 999;
+    bottom: 0;
+    right: 0;
+  }
+}
+@media (min-width: $screen-sm) {
+  body {
+    &:before{
+      content: "small size";
+    }
+  }
+}
+@media (min-width: $screen-md) {
+  body {
+    &:before{
+      content: "medium size";
+    }
+  }
+}
+@media (min-width: $screen-lg) {
+  body {
+    &:before{
+      content: "large size";
+    }
+  }
+}
+
+// --------------------------------------------------
+// Project CSS
+// ==================================================
+
+.muted {
+  height: 100px;
+  width: 100px;
+  background-color: $primary;
+}

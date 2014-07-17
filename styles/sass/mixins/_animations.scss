@@ -1,0 +1,36 @@
+// ========================================
+// ANIMATIONS
+// ========================================
+
+@mixin animation($animation) {
+  $animation: unquote($animation);
+  @include prefixer (animation, $animation, webkit moz spec);
+}
+@mixin animation-name($name) {
+  $name: unquote($name);
+  @include prefixer (animation-name, $name, webkit spec);
+}
+@mixin animation-duration($duration) {
+  $duration: unquote($duration);
+  @include prefixer (animation-duration, $duration, webkit spec);
+}
+@mixin animation-timing-function($timing-function) {
+  $timing-function: unquote($timing-function);
+  @include prefixer (timing-function, $timing-function, webkit spec);
+}
+@mixin animation-delay($delay) {
+  $delay: unquote($delay);
+  @include prefixer (animation-delay, $delay, webkit spec);
+}
+@mixin animation-iteration-count($iteration-count) {
+  $iteration-count: unquote($iteration-count);
+  @include prefixer (iteration-count, $iteration-count, webkit spec);
+}
+@mixin animation-direction($direction) {
+  $direction: unquote($direction);
+  @include prefixer (animation-direction, $direction, webkit spec);
+}
+@mixin animation-fill-mode($fill-mode) {
+  $fill-mode: unquote($fill-mode);
+  @include prefixer (animation-fill-mode, $fill-mode, webkit spec);
+}

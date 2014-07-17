@@ -1,0 +1,14 @@
+// ========================================
+// CONTENT COLUMNS
+// ========================================
+
+// Rotate
+// ----------------------------------------
+@mixin rotate-90  { @include transform(rotate(90deg, 1));  }
+@mixin rotate-180 { @include transform(rotate(180deg, 2)); }
+@mixin rotate-270 { @include transform(rotate(270deg, 3)); }
+
+// Flip
+// ----------------------------------------
+@mixin flip-horizontal { @include transform(scale(-1, 1, 0)); }
+@mixin flip-vertical   { @include transform(scale(1, -1, 2)); }
